@@ -1,70 +1,20 @@
-# Getting Started with Create React App
+# Задание:
+Используя [UI PrimeReact](https://www.primefaces.org/primereact/setup/), нужно сделать интерфейс для отображения таблицы данных пользователей с возможностью их удаления из таблицы.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Для получения списка пользователй использовать [API](https://reqres.in/)
 
-## Available Scripts
+По запросу  List users получить данные о пользователях, вывести уведомление через Toast- Success Message
+{severity: 'success', summary: ‘Получение списка пользователей’, detail: ‘Данные пользователей успешно получены’}
 
-In the project directory, you can run:
+Добавить их в таблицу c колонками «id», «email», «first_name», «last_name».
+В таблице добавить возможность сортировки и поиска по колонкам.
 
-### `npm start`
+Добавить функционал вызова контекстно меню(ContextMenu) по отельной строке с пользователем полями в таблице
+ • Редактировать
+ • Удалить
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+По пункту меню «удалить» посылать запрос на удаление пользователя в апи https://reqres.in/.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+После получения ответа от API вывести уведомление через Toast - Error message в виде {severity: 'error', summary: ‘Удаление пользователя’, detail: 'Пользовтатель first_name last_name удален’}
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Далее удалять строку из таблицы после получения ответа.
