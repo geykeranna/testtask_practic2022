@@ -48,7 +48,7 @@ const DataTableMain = () => {
             const newList = userList.filter((u) => u.id !== user.id);
             setUserList(newList);
             toast.current.show({
-                severity: 'info', summary: 'Удаление пользователя',
+                severity: 'error', summary: 'Удаление пользователя',
                 detail: `Пользователь ${user.first_name} ${user.last_name} был удален.`
             });
         } else {
