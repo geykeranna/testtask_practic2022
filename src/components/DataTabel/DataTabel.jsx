@@ -19,10 +19,24 @@ const DataTableMain = () => {
     const [loading, setLoading] = useState(true);
     const dataService = new DataService();
 
-    useEffect(() => {
-        dataService.getDataset().then(data => setUserList(data));
-        setLoading(false)
+    useEffect( () => {
+        loadUser()
     }, []);
+
+    const loadUser = async() => {
+        const userList = await dataService.getDataset();
+        if (userList) {
+            setUserList(userList);
+            toast.current.show({severity: 'success',
+                summary: 'Получение списка пользователей',
+                detail: 'Данные пользователей успешно получены'});
+        } else {
+            toast.current.show({severity: 'error',
+                summary: 'Получение списка пользователей',
+                detail: 'Данные пользователей не были получены'});
+        }
+        setLoading(false)
+    }
 
     const editUser = (user) => {
         toast.current.show({severity: 'info', summary: 'User want to be edit, but not now', detail: user.name});

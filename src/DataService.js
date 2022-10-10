@@ -1,8 +1,12 @@
 export class DataService {
-    getDataset(){
-        return fetch('https://reqres.in/api/users?page=2')
-            .then(res => res.json())
-            .then(d => d.data);
+    async getDataset(){
+        try{
+            const response = await fetch('https://reqres.in/api/users?page=2');
+            const data = await response.json();
+            return data.data || [];
+        } catch (e){
+            return undefined;
+        }
     }
 
     async deleteDataset(id) {
